@@ -28,7 +28,7 @@ input{
 #container {
   
     width: 720px;
-    height: 320px; 
+    height:auto; 
   
     background-color: #f9f9f9;
     padding: 10px;
@@ -36,8 +36,11 @@ input{
     border:  1px solid(0, 0, 0, 0.14);
     margin: 1px;
     box-shadow: 1px 1px 1.8px 1px rgba(0, 0, 0, 0.581);
+    
    
 }
+
+
 #item,#preco{
   height: 40px;
   width: 200px;
