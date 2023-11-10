@@ -9,13 +9,20 @@
 <body>
     <div id="container">
         <form action="submit">
-            <h1>Adicione um novo elemento</h1>
+            <div class="title">
+                <h1>Lista de Compras</h1>
+            </div>
             <input type="text" name="item" id="item" placeholder="Digite o item">
             <input type="text" name="preco" id="preco" placeholder="Digite o preço">
             <button id="add">Adicionar</button>
             <table>
                 <thead>
-                    
+                    <tr class="header">
+                        <td class="destaque">Nome</td>
+                        <td class="destaque">Preço</td>
+                        <td class="destaque">Comprado</td>
+                        <td class="destaque">Ações</td>
+                    </tr>
                 </thead>
               
                 <tbody>

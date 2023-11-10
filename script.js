@@ -7,7 +7,7 @@ class Produtos{
         this.id = id
         this.nome = nome
         this.preco = preco
-        this.comprado = true;
+        this.comprado = false;
     }
 }
 
@@ -17,7 +17,8 @@ const adicionar = document.querySelector('#add')
 
 
 const tbody = document.querySelector('tbody')
-const thead = document.querySelector('thead')
+
+// função para adicionar um linha na tabela com todas as informações
 function saveList(obj){
     const tr = document.createElement('tr')
     tr.classList.add('linha')
@@ -28,14 +29,17 @@ function saveList(obj){
     const td3 = document.createElement('td')
     let checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
+    checkbox.classList.add('cheked')
     checkbox.addEventListener('change',() => {
        
                 if(checkbox.checked){
                     operacao.marcar(td)
                     operacao.marcar(td2)
+                    obj.comprado = true;
                 }else{
                    operacao.desmarcar(td)
                    operacao.desmarcar(td2)
+                   obj.comprado = false;
                 }
         
         
@@ -62,6 +66,7 @@ function saveList(obj){
     console.log(tr)
 
 }
+// Carrega toda a lista da local storage
 function exibir(){
     const resultado = operacao.listar()
     tbody.innerHTML = '';
@@ -69,6 +74,8 @@ function exibir(){
         saveList(item)
     })
 } 
+
+// evento que add o objeto na lista
 adicionar.addEventListener('click', (e) => {
     e.preventDefault();
     const item = itemInput.value;
