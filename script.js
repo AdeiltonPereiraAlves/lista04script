@@ -30,12 +30,12 @@ function saveList(obj){
     checkbox.type = 'checkbox';
     checkbox.addEventListener('change',() => {
        
-                if (checkbox.checked) {
-                    td.style.textDecoration = 'line-through';
-                    td2.style.textDecoration = 'line-through';
-                } else {
-                    td.style.textDecoration = 'none';
-                    td2.style.textDecoration = 'none';
+                if(checkbox.checked){
+                    operacao.marcar(td)
+                    operacao.marcar(td2)
+                }else{
+                   operacao.desmarcar(td)
+                   operacao.desmarcar(td2)
                 }
         
         
